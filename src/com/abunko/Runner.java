@@ -1,5 +1,9 @@
 package com.abunko;
 
+import com.abunko.Predicate.FilterByActor;
+import com.abunko.Predicate.FilterByGenre;
+import com.abunko.Predicate.FilterByYear;
+
 import static com.abunko.Genre.*;
 
 /**
@@ -30,8 +34,9 @@ public class Runner {
         films.addFilm(film1);
         films.addFilm(film2);
 
-        System.out.println(films.sortFilmsByActor(petya, vasya));
-        System.out.println(films.sortFilmsByGare(THRILLER, ACTHION));
-        System.out.println(films.sortFilmsByYear(1992, 2000));
+        System.out.println(films.filterFilms(FilterByYear.byYear(1992, 2001)));
+        System.out.println(films.filterFilms(FilterByActor.byActor(petya, vasya)));
+        System.out.println(films.filterFilms(FilterByGenre.byGenres(ACTHION, THRILLER)));
+
     }
 }
