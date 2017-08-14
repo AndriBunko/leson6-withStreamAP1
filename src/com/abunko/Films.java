@@ -27,7 +27,6 @@ public class Films {
         return new Films(films.stream().filter(predicate).collect(Collectors.toList()));
     }
 
-
     public List<Film> sortFilmsByActor(Actor ... actors) {
         return films.stream().filter(film -> film.getActors().containsAll((Arrays.asList(actors)))).collect(Collectors.toList());
     }
